@@ -1,0 +1,260 @@
+/* Import Font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== PENGATURAN DASAR & VARIABEL WARNA ===== */
+:root {
+    --primary-color: #007BFF; /* Biru Primer */
+    --secondary-color: #6c757d; /* Abu-abu Sekunder */
+    --background-color: #f8f9fa; /* Latar Belakang Cerah */
+    --text-color: #343a40; /* Warna Teks Gelap */
+    --card-bg-color: #ffffff; /* Warna Latar Kartu */
+    --header-bg: #ffffff;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+section {
+    padding: 60px 5%;
+}
+
+/* ===== HEADER / NAVIGASI ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background-color: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-left: 30px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; /* Memberi ruang untuk header */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* ===== TENTANG SAYA ===== */
+.about h2, .projects h2, .contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Agar responsif */
+}
+
+.about-image img {
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+/* ===== PROYEK ===== */
+.projects {
+    background-color: #e9ecef;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--card-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 1rem 1.5rem 0;
+}
+
+.project-card p {
+    padding: 0 1.5rem 1rem;
+}
+
+.btn-project {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    margin: 0 1.5rem 1.5rem;
+    text-align: center;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-project:hover {
+    background-color: #5a6268;
+}
+
+/* ===== KONTAK & FOOTER ===== */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.social-icons {
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    font-size: 2rem;
+    margin: 0 15px;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer {
+    background-color: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 20px 5%;
+}
+
+/* ===== RESPONSIVE DESIGN (Media Queries) ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        margin-top: 15px;
+    }
+    
+    .navbar a {
+        margin: 0 10px;
+    }
+
+    .hero {
+        padding-top: 150px; /* Ruang lebih untuk header yang lebih besar */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+    
+    .about-container {
+        text-align: center;
+    }
+}
